@@ -5,6 +5,10 @@
  */
 package control;
 
+import dao.GenericDAO;
+import domain.Cargo;
+import domain.Funcionario;
+import domain.Venda;
 import vision.*;
 
 /**
@@ -40,9 +44,23 @@ public class ControleVisao {
 
         //</editor-fold>
         ControleVisao visaoCtrl = new ControleVisao();
-        visaoCtrl.informativoChocadeira();
+        visaoCtrl.janelaPrincipal();
 
-        System.exit(0);
+//        GenericDAO dao = new GenericDAO();
+//
+//        Funcionario funcionario = new Funcionario();
+//        funcionario.setNome("Maria da Silva");
+//        funcionario.setSalario(1200.00);
+//        funcionario.setCargo(Cargo.VENDEDOR);
+//        dao.create(funcionario);
+//
+//        Venda novaVenda = new Venda(funcionario, 200.0);
+//        dao.create(novaVenda);
+//
+//        System.out.println("valor da comissão: "
+//                + novaVenda.calculaComissao());
+//
+//        System.exit(0);
 
     }
 
@@ -65,11 +83,27 @@ public class ControleVisao {
         janelaPrincipal.setVisible(true);
     }
 
-    private void informativoChocadeira() {
-        JDGInformativoChocadeira informativoChocadeira = JDGInformativoChocadeira.getInstance(janelaPrincipal, true, this);
-        informativoChocadeira.setLocationRelativeTo(null);
-        informativoChocadeira.setResizable(false);
-        informativoChocadeira.setVisible(true);
+    public void cadastrarFuncionario() {
+        JDGCadastrarFuncionario cadastrarFuncionario = JDGCadastrarFuncionario.getInstance(janelaPrincipal, true, this);
+        cadastrarFuncionario.setLocationRelativeTo(null);
+        cadastrarFuncionario.setResizable(false);
+        cadastrarFuncionario.setVisible(true);
+    }
+    
+    public void calcularComissao() {
+        JDGCalcularComissao calcularComissao = JDGCalcularComissao.getInstance(janelaPrincipal, true, this);
+        calcularComissao.setLocationRelativeTo(null);
+        calcularComissao.setResizable(false);
+        calcularComissao.setVisible(true);
+    }
+
+    public Funcionario buscarFuncionario() {
+        JDGBuscarFuncionario buscarFuncionario = JDGBuscarFuncionario.getInstance(janelaPrincipal, true, this);
+        buscarFuncionario.setLocationRelativeTo(null);
+        buscarFuncionario.setResizable(false);
+        buscarFuncionario.setVisible(true);
+        
+        return buscarFuncionario.getObjetoFuncionario();
     }
 
 }

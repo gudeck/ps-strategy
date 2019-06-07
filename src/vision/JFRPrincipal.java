@@ -29,16 +29,62 @@ public class JFRPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mnuiCadastroFuncionario = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        mnuiCalcularComissao = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Anarriê");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        jMenu1.setText("Cadastrar");
+
+        mnuiCadastroFuncionario.setText("Funcionário");
+        mnuiCadastroFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuiCadastroFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuiCadastroFuncionario);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Calcular");
+
+        mnuiCalcularComissao.setText("Comissão");
+        mnuiCalcularComissao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuiCalcularComissaoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnuiCalcularComissao);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         getAccessibleContext().setAccessibleName("Anarrie");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mnuiCadastroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiCadastroFuncionarioActionPerformed
+        controladorVisao.cadastrarFuncionario();
+    }//GEN-LAST:event_mnuiCadastroFuncionarioActionPerformed
+
+    private void mnuiCalcularComissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiCalcularComissaoActionPerformed
+        controladorVisao.calcularComissao();
+    }//GEN-LAST:event_mnuiCalcularComissaoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem mnuiCadastroFuncionario;
+    private javax.swing.JMenuItem mnuiCalcularComissao;
     // End of variables declaration//GEN-END:variables
 }

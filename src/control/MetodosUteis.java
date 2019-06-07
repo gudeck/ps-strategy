@@ -14,14 +14,6 @@ import java.text.SimpleDateFormat;
  */
 public class MetodosUteis {
 
-    public static java.sql.Date stringTOsqlDate(String data) throws ParseException {
-        SimpleDateFormat formatPattern = new SimpleDateFormat("dd/MM/yyyy");
-        java.util.Date javaDate = formatPattern.parse(data);
-        java.sql.Date sqlDate = new java.sql.Date(javaDate.getTime());
-
-        return sqlDate;
-    }
-
     public static java.util.Date stringTOjavaDate(String data) throws ParseException {
         SimpleDateFormat formatPattern = new SimpleDateFormat("dd/MM/yyyy");
         java.util.Date javaDate = formatPattern.parse(data);

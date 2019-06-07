@@ -6,7 +6,7 @@
 package control;
 
 import dao.*;
-import domain.Roupa;
+import domain.Funcionario;
 import java.util.ArrayList;
 
 /**
@@ -27,19 +27,13 @@ public class ControleDominio {
         return uniqueInstance;
     }
 
-    public void createRoupa(Roupa roupa) {
-        
-        ArrayList<Roupa> listaRoupas = new ArrayList<>();
-        Roupa aux = roupa;
-        while(aux != null){
-            listaRoupas.add(aux);
-            aux = roupa.getRoupa();
-        }
-        
-        for(int i = listaRoupas.size(); i >= 0; i--){
-            genericDao.create(listaRoupas.get(i));
-        }
+    public void funcionarioCreate(Funcionario funcionario) {
+        genericDao.create(funcionario);
 
+    }
+
+    public ArrayList funcionarioRead() {
+        return (ArrayList) genericDao.readAll(Funcionario.class);
     }
 
 }
