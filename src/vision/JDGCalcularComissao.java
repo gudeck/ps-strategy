@@ -137,7 +137,12 @@ public class JDGCalcularComissao extends javax.swing.JDialog {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         
-        Venda novaVenda = new Venda(funcionario, Double.parseDouble(ftxtVenda.getText()));
+        Venda novaVenda = new Venda();
+        novaVenda.setFuncionario(funcionario);
+        novaVenda.setValor(Double.parseDouble(ftxtVenda.getText()));
+        novaVenda.setComissao(novaVenda.calculaComissao());
+        
+        controladorVisao.getControleDominio().vendaCreate(novaVenda);
         
         lblComissao.setText(novaVenda.calculaComissao().toString());
     }//GEN-LAST:event_btnCalcularActionPerformed

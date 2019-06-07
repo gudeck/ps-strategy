@@ -6,8 +6,6 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -25,7 +23,6 @@ public class Funcionario implements Serializable {
 
     private Integer codFuncionario;
     private String nome;
-    private double salario;
 
     @Enumerated(EnumType.ORDINAL)
     private Cargo cargo;
@@ -44,14 +41,6 @@ public class Funcionario implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
     }
 
     public Cargo getCargo() {

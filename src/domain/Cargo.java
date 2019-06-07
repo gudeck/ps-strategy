@@ -20,7 +20,7 @@ public enum Cargo implements Comissao {
     VENDEDOR {
         @Override
         public double calculaComissao(double valor) {
-            return valor * 0.5 ;
+            return valor * 0.05 ;
         }
     },
     GERENTE {

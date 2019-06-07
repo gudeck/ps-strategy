@@ -7,6 +7,7 @@ package control;
 
 import dao.*;
 import domain.Funcionario;
+import domain.Venda;
 import java.util.ArrayList;
 
 /**
@@ -34,6 +35,10 @@ public class ControleDominio {
 
     public ArrayList funcionarioRead() {
         return (ArrayList) genericDao.readAll(Funcionario.class);
+    }
+
+    public void vendaCreate(Venda novaVenda) {
+        genericDao.create(novaVenda);
     }
 
 }
